@@ -167,208 +167,188 @@ import type {
 } from '@intelehealth/intelehealth-fhw-react-core/types';
 ```
 
-## 📚 API Documentation
+## 📁 Project Structure
 
-### Storage Class
-
-A platform-agnostic storage utility that works with both React and React Native.
-
-```typescript
-import { Storage } from '@intelehealth/intelehealth-fhw-react-core';
-
-const storage = new Storage('app_');
-
-// Set a value
-await storage.set('user', { id: 1, name: 'John' });
-
-// Get a value
-const user = await storage.get('user');
-
-// Remove a value
-await storage.remove('user');
-
-// Clear all values
-await storage.clear();
+```
+intelehealth-fhw-react-core/
+├── src/                    # Source code
+│   ├── core/              # Core utilities (Storage)
+│   ├── services/          # Services (ApiService, AuthService)
+│   ├── hooks/             # React hooks (useLocalStorage, useDebounce)
+│   ├── utils/             # Utility functions
+│   ├── types/             # Type definitions
+│   └── index.ts           # Main export file
+├── examples/               # Integration examples
+├── tests/                  # Test files
+├── docs/                   # Documentation
+├── .github/                # GitHub Actions workflows
+├── package.json            # Package configuration
+├── tsconfig.json          # TypeScript configuration
+├── rollup.config.js       # Build configuration
+├── jest.config.js         # Test configuration
+└── README.md              # This file
 ```
 
-### ApiService Class
+## 🛠️ Quick Start
 
-HTTP client with retry logic and error handling.
+1. **Clone and Setup**
 
-```typescript
-import { ApiService } from '@intelehealth/intelehealth-fhw-react-core';
+   ```bash
+   git clone <your-repo>
+   cd intelehealth-fhw-react-core
+   yarn install
+   yarn prepare         # Initialize Husky git hooks
+   ```
 
-const api = new ApiService({
-  baseURL: 'https://api.example.com',
-  timeout: 5000,
-  retries: 3,
-});
+2. **Development**
 
-// GET request
-const users = await api.get('/users');
+   ```bash
+   yarn dev             # Watch mode
+   yarn build           # Build library
+   yarn test            # Run tests
+   yarn lint            # Check code quality
+   yarn lint:fix        # Fix linting issues
+   yarn format          # Format code with Prettier
+   yarn type-check      # TypeScript type checking
+   yarn docs            # Generate documentation
+   ```
 
-// POST request
-const newUser = await api.post('/users', {
-  name: 'John',
-  email: 'john@example.com',
-});
+3. **Code Quality**
 
-// PUT request
-const updatedUser = await api.put('/users/1', { name: 'John Updated' });
+   ```bash
+   yarn lint:check      # Strict linting (no warnings allowed)
+   yarn format:check    # Check code formatting
+   yarn pre-push        # Run all quality checks
+   ```
 
-// DELETE request
-await api.delete('/users/1');
-```
+## 📚 Documentation
 
-### AuthService Class
-
-Authentication state management.
-
-```typescript
-import { AuthService } from '@intelehealth/intelehealth-fhw-react-core';
-
-const auth = new AuthService();
-
-// Login
-await auth.login({ email: 'user@example.com', password: 'password' });
-
-// Check if user is authenticated
-const isAuthenticated = auth.isAuthenticated();
-
-// Get current user
-const user = auth.getCurrentUser();
-
-// Logout
-await auth.logout();
-```
-
-### React Hooks
-
-#### useLocalStorage (React only)
-
-```typescript
-import { useLocalStorage } from '@intelehealth/intelehealth-fhw-react-core';
-
-function MyComponent() {
-  const [value, setValue] = useLocalStorage('key', 'defaultValue');
-
-  return (
-    <div>
-      <p>Value: {value}</p>
-      <button onClick={() => setValue('new value')}>
-        Update Value
-      </button>
-    </div>
-  );
-}
-```
-
-#### useDebounce
-
-```typescript
-import { useDebounce } from '@intelehealth/intelehealth-fhw-react-core';
-
-function SearchComponent() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
-
-  useEffect(() => {
-    if (debouncedSearchTerm) {
-      // Perform search
-      performSearch(debouncedSearchTerm);
-    }
-  }, [debouncedSearchTerm]);
-
-  return (
-    <input
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      placeholder="Search..."
-    />
-  );
-}
-```
-
-### Utility Functions
-
-```typescript
-import {
-  formatDate,
-  deepClone,
-  capitalize,
-  generateId,
-} from '@intelehealth/intelehealth-fhw-react-core/utils';
-
-// Date utilities
-const formattedDate = formatDate(new Date(), 'YYYY-MM-DD');
-
-// Object utilities
-const cloned = deepClone(originalObject);
-
-// String utilities
-const capitalized = capitalize('hello world'); // "Hello world"
-
-// Generate unique ID
-const id = generateId(); // "abc123def456"
-```
+- [Setup Guide](./docs/SETUP.md)
+- [Development Guide](./docs/DEVELOPMENT.md)
+- [Coding Standards](./docs/CODING_STANDARDS.md)
+- [Testing Guide](./docs/TESTING.md)
+- [Publishing Guide](./docs/PUBLISHING.md)
+- [API Reference](./docs/API.md)
 
 ## 🔧 Configuration
 
-### TypeScript Configuration
+All configuration files are pre-configured for:
 
-Add to your `tsconfig.json`:
+- **TypeScript**: Strict type checking and modern ES features
+- **Rollup**: Efficient bundling for multiple targets
+- **Jest**: Comprehensive testing setup
+- **ESLint**: Advanced linting with TypeScript and React rules
+- **Prettier**: Consistent code formatting
+- **Husky**: Git hooks for code quality
+- **Lint-staged**: Pre-commit formatting and linting
+- **NPM Publishing**: Complete publishing workflow
 
-```json
-{
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  }
-}
-```
+## 📋 Code Standards & Naming Conventions
 
-### React Native Configuration
+### TypeScript Naming Conventions
 
-For React Native projects, ensure you have the required peer dependencies:
+- **Interfaces**: PascalCase with `I` prefix (e.g., `IUserData`)
+- **Types**: PascalCase with `T` prefix (e.g., `TApiResponse`)
+- **Enums**: PascalCase with `E` prefix (e.g., `EHttpMethod`)
+- **Enum Members**: UPPER_CASE (e.g., `GET`, `POST`)
+- **Functions/Variables**: camelCase (e.g., `getUserData`)
+- **Constants**: UPPER_CASE (e.g., `API_BASE_URL`)
+
+### File Organization
+
+- **Components**: PascalCase (e.g., `UserProfile.tsx`)
+- **Hooks**: camelCase with `use` prefix (e.g., `useLocalStorage.ts`)
+- **Services**: PascalCase with `Service` suffix (e.g., `ApiService.ts`)
+- **Utils**: camelCase (e.g., `dateUtils.ts`)
+- **Tests**: Same as source with `.test.` or `.spec.` (e.g., `ApiService.test.ts`)
+
+### Import Organization
+
+Imports are automatically organized by ESLint in this order:
+
+1. Built-in Node.js modules
+2. External packages
+3. Internal modules
+4. Parent directory imports
+5. Sibling imports
+6. Index imports
+
+### Code Quality Rules
+
+- **No `any` types**: Use proper TypeScript types
+- **Consistent imports**: Use type-only imports when appropriate
+- **No console statements**: Use proper logging in production
+- **Proper error handling**: All async operations must handle errors
+- **Test coverage**: Minimum 80% test coverage required
+
+## 📦 NPM Package
+
+This boilerplate creates a package that can be installed via:
 
 ```bash
-npm install react react-native
+yarn add @intelehealth/intelehealth-fhw-react-core
 ```
 
-## 🐛 Troubleshooting
+## 🌟 GitHub Features
 
-### Common Issues
+- 📊 **Issues & Discussions** - Report bugs and discuss features
+- 🔄 **Pull Requests** - Contribute to the project
+- 📈 **GitHub Actions** - Automated CI/CD pipeline
+- 📋 **Project Boards** - Track development progress
+- 🏷️ **Releases** - Versioned releases with changelog
+- 📚 **Wiki** - Additional documentation and guides
 
-**1. TypeScript errors with imports**
+## 🤝 Contributing
 
-- Ensure you have TypeScript 5.0+ installed
-- Check your `tsconfig.json` configuration
+We welcome contributions! Please follow these guidelines:
 
-**2. React Native compatibility**
+### Development Workflow
 
-- Make sure you're using React Native 0.70+
-- Some hooks like `useLocalStorage` are not available in React Native
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/your-feature-name`
+3. **Make your changes** following our coding standards
+4. **Add tests** for new functionality
+5. **Run quality checks**:
+   ```bash
+   yarn lint:check
+   yarn format:check
+   yarn type-check
+   npm test
+   ```
+6. **Commit your changes**: Git hooks will automatically format and lint
+7. **Push your branch**: Pre-push hooks will run comprehensive checks
+8. **Submit a pull request**
 
-**3. Build errors**
+### Pull Request Requirements
 
-- Clear your node_modules and reinstall
-- Check your bundler configuration
+- All tests must pass
+- Code must follow our naming conventions
+- No ESLint warnings or errors
+- Proper TypeScript types (no `any`)
+- Test coverage maintained above 80%
+- Documentation updated if needed
 
-### Getting Help
+### Code Review Process
 
-- 📖 **Documentation**: Check our [full API docs](https://github.com/intelehealth/intelehealth-fhw-react-core#readme)
+- All PRs require review from code owners
+- At least one approval required before merge
+- Automated checks must pass (CI/CD pipeline)
+
+## 🆘 Support & Community
+
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/intelehealth/intelehealth-fhw-react-core/issues)
 - 💡 **Feature Requests**: [GitHub Discussions](https://github.com/intelehealth/intelehealth-fhw-react-core/discussions)
 - 📧 **Email Support**: info@intelehealth.org
+- 📖 **Documentation**: [Full API Docs](./docs/API.md)
+- 💬 **Community**: Join our discussions for help and updates
+
+## 📊 Stats
+
+![GitHub stars](https://img.shields.io/github/stars/intelehealth/intelehealth-fhw-react-core?style=social)
+![GitHub forks](https://img.shields.io/github/forks/intelehealth/intelehealth-fhw-react-core?style=social)
+![GitHub issues](https://img.shields.io/github/issues/intelehealth/intelehealth-fhw-react-core)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/intelehealth/intelehealth-fhw-react-core)
 
 ## 📄 License
 
 MIT License - see [LICENSE](./LICENSE) file for details.
-
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/intelehealth/intelehealth-fhw-react-core)
-- [NPM Package](https://www.npmjs.com/package/@intelehealth/intelehealth-fhw-react-core)
-- [Documentation](https://github.com/intelehealth/intelehealth-fhw-react-core#readme)
-- [Changelog](https://github.com/intelehealth/intelehealth-fhw-react-core/releases)
