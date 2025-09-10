@@ -13,7 +13,7 @@ fi
 
 # Build the library first
 echo "📦 Building the library..."
-npm run build
+yarn run build
 
 if [ $? -ne 0 ]; then
     echo "❌ Build failed. Please fix the build errors first."
@@ -22,21 +22,21 @@ fi
 
 # Create global link
 echo "🔗 Creating global link..."
-npm link
+yarn link
 
 if [ $? -eq 0 ]; then
     echo "✅ Library linked globally!"
     echo ""
     echo "📋 Next steps:"
     echo "1. Go to your React/React Native app directory"
-    echo "2. Run: npm link @intelehealth/intelehealth-fhw-react-core"
+    echo "2. Run: yarn link @intelehealth/intelehealth-fhw-react-core"
     echo "3. Start development:"
-    echo "   - Library: npm run dev (in intelehealth-fhw-react-core directory)"
-    echo "   - Your app: npm start (in your app directory)"
+    echo "   - Library: yarn run dev (in intelehealth-fhw-react-core directory)"
+    echo "   - Your app: yarn start (in your app directory)"
     echo ""
     echo "🔄 To unlink later:"
-    echo "   - From your app: npm unlink @intelehealth/intelehealth-fhw-react-core"
-    echo "   - From library: npm unlink"
+    echo "   - From your app: yarn unlink @intelehealth/intelehealth-fhw-react-core"
+    echo "   - From library: yarn unlink"
 else
     echo "❌ Failed to create global link"
     exit 1

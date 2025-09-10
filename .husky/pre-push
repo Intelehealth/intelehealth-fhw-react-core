@@ -1,8 +1,11 @@
-echo "🔍 Running pre-commit checks..."
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-# Run lint-staged to format and lint staged files
-echo "📝 Formatting and linting staged files..."
-npx lint-staged
+echo "🚀 Running pre-push checks..."
+
+# Lint check
+echo "📝 Running lint check..."
+yarn lint:check
 
 # Type checking
 echo "🔧 Running TypeScript type check..."
@@ -16,4 +19,4 @@ yarn test
 echo "🏗️ Verifying build..."
 yarn build
 
-echo "✅ All pre-commit checks passed!"
+echo "✅ All pre-push checks passed!"

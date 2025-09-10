@@ -19,28 +19,28 @@ if (!fs.existsSync('package.json') || !fs.existsSync('src')) {
 try {
   // Build the library first
   console.log('📦 Building the library...');
-  execSync('npm run build', { stdio: 'inherit' });
+  execSync('yarn run build', { stdio: 'inherit' });
 
   // Create global link
   console.log('🔗 Creating global link...');
-  execSync('npm link', { stdio: 'inherit' });
+  execSync('yarn link', { stdio: 'inherit' });
 
   console.log('✅ Library linked globally!');
   console.log('');
   console.log('📋 Next steps:');
   console.log('1. Go to your React/React Native app directory');
-  console.log('2. Run: npm link @intelehealth/intelehealth-fhw-react-core');
+  console.log('2. Run: yarn link @intelehealth/intelehealth-fhw-react-core');
   console.log('3. Start development:');
   console.log(
-    '   - Library: npm run dev (in intelehealth-fhw-react-core directory)'
+    '   - Library: yarn run dev (in intelehealth-fhw-react-core directory)'
   );
-  console.log('   - Your app: npm start (in your app directory)');
+  console.log('   - Your app: yarn start (in your app directory)');
   console.log('');
   console.log('🔄 To unlink later:');
   console.log(
-    '   - From your app: npm unlink @intelehealth/intelehealth-fhw-react-core'
+    '   - From your app: yarn unlink @intelehealth/intelehealth-fhw-react-core'
   );
-  console.log('   - From library: npm unlink');
+  console.log('   - From library: yarn unlink');
 } catch (error) {
   console.error('❌ Failed to set up development environment:', error.message);
   process.exit(1);

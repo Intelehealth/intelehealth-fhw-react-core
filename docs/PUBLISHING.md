@@ -55,8 +55,8 @@ If the name is taken, consider alternatives:
 Ensure your build process works correctly:
 
 ```bash
-npm run clean
-npm run build
+yarn clean
+yarn build
 ```
 
 Check that the `dist/` directory contains:
@@ -254,7 +254,7 @@ jobs:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm run build
+      - run: yarn build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -386,7 +386,7 @@ echo "Running tests..."
 npm test
 
 echo "Building package..."
-npm run build
+yarn build
 
 echo "Publishing to NPM..."
 npm publish

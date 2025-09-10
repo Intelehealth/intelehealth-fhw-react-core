@@ -35,19 +35,19 @@ yarn add @intelehealth/intelehealth-fhw-react-core
 
 For local development and testing with your React or React Native applications:
 
-### Quick Setup with npm link
+### Quick Setup with yarn link
 
 ```bash
 # 1. Link the library globally (automated)
 cd intelehealth-fhw-react-core
-npm run link:dev
+yarn link:dev
 
 # 2. Link in your React app
 cd your-react-app
-npm link @intelehealth/intelehealth-fhw-react-core
+yarn link @intelehealth/intelehealth-fhw-react-core
 
 # 3. Start development
-cd intelehealth-fhw-react-core && npm run dev  # Watch mode
+cd intelehealth-fhw-react-core && yarn dev  # Watch mode
 cd your-react-app && npm start  # Your app
 ```
 
@@ -56,14 +56,14 @@ cd your-react-app && npm start  # Your app
 ```bash
 # 1. Link the library globally
 cd intelehealth-fhw-react-core
-npm link
+yarn link
 
 # 2. Link in your React app
 cd your-react-app
-npm link @intelehealth/intelehealth-fhw-react-core
+yarn link @intelehealth/intelehealth-fhw-react-core
 
 # 3. Start development
-cd intelehealth-fhw-react-core && npm run dev  # Watch mode
+cd intelehealth-fhw-react-core && yarn dev  # Watch mode
 cd your-react-app && npm start  # Your app
 ```
 
@@ -298,9 +298,9 @@ We welcome contributions! Please follow these guidelines:
 4. **Add tests** for new functionality
 5. **Run quality checks**:
    ```bash
-   npm run lint:check
-   npm run format:check
-   npm run type-check
+   yarn lint:check
+   yarn format:check
+   yarn type-check
    npm test
    ```
 6. **Commit your changes**: Git hooks will automatically format and lint

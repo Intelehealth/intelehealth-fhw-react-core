@@ -60,7 +60,7 @@
     "clean": "rimraf dist",
     "prepare": "husky install",
     "pre-commit": "lint-staged && yarn format && yarn type-check && yarn lint:check && yarn test",
-    "pre-push": "yarn type-check && yarn lint:check && yarn test",
+    "pre-push": "yarn type-check && yarn lint:check && yarn test && yarn build",
     "prepublishOnly": "yarn clean && yarn build",
     "publish": "npm publish",
     "prebuild": "yarn clean",

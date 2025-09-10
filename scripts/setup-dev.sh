@@ -31,7 +31,7 @@ fi
 
 # Initialize Husky
 echo "🔧 Setting up Husky git hooks..."
-npm run prepare
+yarn run prepare
 
 if [ $? -ne 0 ]; then
     echo "❌ Failed to setup Husky"
@@ -42,29 +42,29 @@ fi
 echo "🔍 Running initial quality checks..."
 
 echo "📝 Checking code formatting..."
-npm run format:check
+yarn run format:check
 
 echo "🧹 Running ESLint..."
-npm run lint:check
+yarn run lint:check
 
 echo "🔧 Running TypeScript type check..."
-npm run type-check
+yarn run type-check
 
 echo "🧪 Running tests..."
-npm test
+yarn test
 
 echo ""
 echo "✅ Development environment setup complete!"
 echo ""
 echo "📋 Available commands:"
-echo "  npm run dev          - Start development mode"
-echo "  npm run build        - Build the library"
-echo "  npm run test         - Run tests"
-echo "  npm run lint         - Check code quality"
-echo "  npm run lint:fix     - Fix linting issues"
-echo "  npm run format       - Format code"
-echo "  npm run type-check   - TypeScript type checking"
-echo "  npm run docs         - Generate documentation"
+echo "  yarn run dev          - Start development mode"
+echo "  yarn run build        - Build the library"
+echo "  yarn run test         - Run tests"
+echo "  yarn run lint         - Check code quality"
+echo "  yarn run lint:fix     - Fix linting issues"
+echo "  yarn run format       - Format code"
+echo "  yarn run type-check   - TypeScript type checking"
+echo "  yarn run docs         - Generate documentation"
 echo ""
 echo "📚 Documentation:"
 echo "  - Coding Standards: ./docs/CODING_STANDARDS.md"

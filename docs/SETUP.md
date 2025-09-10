@@ -203,7 +203,7 @@ import type { ApiResponse } from '@yourusername/your-library-name';
 ### Run Development Mode
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 This will start the build process in watch mode, automatically rebuilding when you make changes.
@@ -219,7 +219,7 @@ This will run all tests and show coverage information.
 ### Build Your Library
 
 ```bash
-npm run build
+yarn build
 ```
 
 This will create the production build in the `dist/` directory.
@@ -227,7 +227,7 @@ This will create the production build in the `dist/` directory.
 ### Generate Documentation
 
 ```bash
-npm run docs
+yarn docs
 ```
 
 This will generate API documentation in the `docs/` directory.
@@ -258,7 +258,7 @@ After building, check that your `dist/` directory contains:
 
 For local development and testing, you'll need to link the library with your React or React Native applications.
 
-### Option 1: Using npm link (Recommended)
+### Option 1: Using yarn link (Recommended)
 
 This method creates a symbolic link between your library and your application, allowing you to test changes in real-time.
 
@@ -268,7 +268,7 @@ From the `intelehealth-fhw-react-core` directory:
 
 ```bash
 # Create a global link to your library
-npm link
+yarn link
 
 # Or if using yarn
 yarn link
@@ -280,7 +280,7 @@ From your React application directory:
 
 ```bash
 # Link the library to your app
-npm link @intelehealth/intelehealth-fhw-react-core
+yarn link @intelehealth/intelehealth-fhw-react-core
 
 # Or if using yarn
 yarn link @intelehealth/intelehealth-fhw-react-core
@@ -290,7 +290,7 @@ yarn link @intelehealth/intelehealth-fhw-react-core
 
 ```bash
 # In the library directory - start watch mode
-npm run dev
+yarn dev
 
 # In your React app directory - start the app
 npm start
@@ -315,7 +315,7 @@ In your React application's `package.json`:
 #### Step 2: Install Dependencies
 
 ```bash
-npm install
+yarn install
 # or
 yarn install
 ```
@@ -330,7 +330,7 @@ From the `intelehealth-fhw-react-core` directory:
 
 ```bash
 # Build the library
-npm run build
+yarn build
 
 # Create a tarball
 npm pack
@@ -342,7 +342,7 @@ From your React application directory:
 
 ```bash
 # Install the tarball
-npm install ../path/to/intelehealth-fhw-react-core/intelehealth-fhw-react-core-1.0.0.tgz
+yarn install ../path/to/intelehealth-fhw-react-core/intelehealth-fhw-react-core-1.0.0.tgz
 ```
 
 ## Step 10: Test Integration
@@ -371,14 +371,14 @@ npx react-native run-android  # or run-ios
 
    ```bash
    cd intelehealth-fhw-react-core
-   npm run dev
+   yarn dev
    ```
 
-2. **Link the library to your app** (if using npm link):
+2. **Link the library to your app** (if using yarn link):
 
    ```bash
    cd your-react-app
-   npm link @intelehealth/intelehealth-fhw-react-core
+   yarn link @intelehealth/intelehealth-fhw-react-core
    ```
 
 3. **Start your React application**:
@@ -406,20 +406,20 @@ If you encounter React version conflicts:
 
 3. **Rebuild the library**:
    ```bash
-   npm run build
+   yarn build
    ```
 
 #### Module Resolution Issues
 
 If you get module resolution errors:
 
-1. **Use npm link instead of file dependencies**
+1. **Use yarn link instead of file dependencies**
 2. **Clear node_modules and reinstall**:
 
    ```bash
    cd your-react-app
    rm -rf node_modules
-   npm install
+   yarn install
    ```
 
 3. **Restart the development server**
@@ -432,7 +432,7 @@ If you get TypeScript errors:
 
    ```bash
    cd intelehealth-fhw-react-core
-   npm run build
+   yarn build
    ```
 
 2. **Check that type declarations are generated** in `dist/` directory
@@ -442,10 +442,10 @@ If you get TypeScript errors:
 ### Development Best Practices
 
 1. **Always build the library** before testing in your app
-2. **Use npm link for active development** - it provides the best development experience
+2. **Use yarn link for active development** - it provides the best development experience
 3. **Test with both React and React Native** to ensure compatibility
 4. **Keep the library's React version aligned** with your app's React version
-5. **Use the watch mode** (`npm run dev`) for continuous development
+5. **Use the watch mode** (`yarn dev`) for continuous development
 
 ## Common Issues and Solutions
 

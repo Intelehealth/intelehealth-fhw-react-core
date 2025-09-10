@@ -23,7 +23,7 @@ This guide covers the development workflow and best practices for working with t
 
 2. **Start development mode:**
    ```bash
-   npm run dev
+   yarn dev
    ```
 
 This will start the build process in watch mode, automatically rebuilding when you make changes.
@@ -131,8 +131,8 @@ intelehealth-fhw-react-core/
 
 1. **Make your changes** in the source files
 2. **Run tests** to ensure nothing is broken: `npm test`
-3. **Check linting:** `npm run lint`
-4. **Format code:** `npm run format`
+3. **Check linting:** `yarn lint`
+4. **Format code:** `yarn format`
 
 ### 2. Testing Your Changes
 
@@ -143,10 +143,10 @@ intelehealth-fhw-react-core/
 npm test
 
 # Run tests in watch mode
-npm run test:watch
+yarn test:watch
 
 # Run tests with coverage
-npm run test:coverage
+yarn test:coverage
 
 # Run specific test file
 npm test -- NewService.test.ts
@@ -193,24 +193,24 @@ Follow these testing best practices:
 
 ```bash
 # Check for linting issues
-npm run lint
+yarn lint
 
 # Fix auto-fixable issues
-npm run lint:fix
+yarn lint:fix
 ```
 
 #### Code Formatting
 
 ```bash
 # Format all code
-npm run format
+yarn format
 ```
 
 #### TypeScript Compilation
 
 ```bash
 # Check TypeScript compilation
-npm run build:types
+yarn build:types
 ```
 
 ### 4. Building and Testing
@@ -219,17 +219,17 @@ npm run build:types
 
 ```bash
 # Start development mode (watch)
-npm run dev
+yarn dev
 
 # Single development build
-npm run build
+yarn build
 ```
 
 #### Production Build
 
 ```bash
 # Clean and build
-npm run clean && npm run build
+yarn clean && yarn build
 ```
 
 #### Testing Build Output
