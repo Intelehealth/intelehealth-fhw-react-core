@@ -1,0 +1,44 @@
+# Global code owners
+* @Zeeshan-IH
+
+# Core library files
+/src/ @Zeeshan-IH
+/src/core/ @Zeeshan-IH
+/src/services/ @Zeeshan-IH
+/src/hooks/ @Zeeshan-IH
+/src/utils/ @Zeeshan-IH
+
+# Configuration files
+package.json @Zeeshan-IH
+tsconfig.json @Zeeshan-IH
+rollup.config.js @Zeeshan-IH
+jest.config.js @Zeeshan-IH
+.eslintrc.js @Zeeshan-IH
+.prettierrc @Zeeshan-IH
+
+# Documentation
+README.md @Zeeshan-IH
+docs/ @Zeeshan-IH
+*.md @Zeeshan-IH
+
+# GitHub workflows and templates
+.github/ @Zeeshan-IH
+
+# Examples
+examples/ @Zeeshan-IH
+
+# Tests
+tests/ @Zeeshan-IH
+*.test.ts @Zeeshan-IH
+*.test.tsx @Zeeshan-IH
+*.spec.ts @Zeeshan-IH
+*.spec.tsx @Zeeshan-IH
+
+# Build and distribution
+dist/ @Zeeshan-IH
+build/ @Zeeshan-IH
+
+# Dependencies and lock files
+package-lock.json @Zeeshan-IH
+yarn.lock @Zeeshan-IH
+pnpm-lock.yaml @Zeeshan-IH

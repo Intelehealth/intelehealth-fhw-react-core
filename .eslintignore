@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Generated files
+*.d.ts
+*.js.map
+
+# Documentation
+docs/
+
+# Config files
+*.config.js
+*.config.ts
+
+# Test files (optional - uncomment if you want to exclude them)
+# tests/
+# *.test.ts
+# *.test.tsx
+# *.spec.ts
+# *.spec.tsx
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
