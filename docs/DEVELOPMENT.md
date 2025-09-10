@@ -1,6 +1,6 @@
 # Development Guide
 
-This guide covers the development workflow and best practices for working with the ih-hw-core library.
+This guide covers the development workflow and best practices for working with the intelehealth-fhw-react-core library.
 
 ## Development Environment Setup
 
@@ -17,7 +17,7 @@ This guide covers the development workflow and best practices for working with t
 
    ```bash
    git clone <your-repo-url>
-   cd ih-hw-core
+   cd intelehealth-fhw-react-core
    yarn install
    ```
 
@@ -31,7 +31,7 @@ This will start the build process in watch mode, automatically rebuilding when y
 ## Project Structure
 
 ```
-ih-hw-core/
+intelehealth-fhw-react-core/
 ├── src/                    # Source code
 │   ├── core/              # Core utilities (Storage)
 │   │   ├── Storage.ts     # Storage implementation
@@ -237,7 +237,7 @@ npm run clean && npm run build
 ```bash
 # Test the built package locally
 npm pack
-yarn add ./ih-hw-core-1.0.0.tgz
+yarn add ./intelehealth-fhw-react-core-1.0.0.tgz
 ```
 
 ## Core Development Concepts
@@ -250,11 +250,11 @@ The library supports both full imports and folder-wise imports for optimal perfo
 
 ```typescript
 // Import only what you need - better tree-shaking
-import { Storage } from '@intelehealth/ih-hw-core/core';
-import { ApiService } from '@intelehealth/ih-hw-core/services';
-import { useLocalStorage } from '@intelehealth/ih-hw-core/hooks';
-import { formatDate } from '@intelehealth/ih-hw-core/utils';
-import type { ApiResponse } from '@intelehealth/ih-hw-core/types';
+import { Storage } from '@intelehealth/intelehealth-fhw-react-core/core';
+import { ApiService } from '@intelehealth/intelehealth-fhw-react-core/services';
+import { useLocalStorage } from '@intelehealth/intelehealth-fhw-react-core/hooks';
+import { formatDate } from '@intelehealth/intelehealth-fhw-react-core/utils';
+import type { ApiResponse } from '@intelehealth/intelehealth-fhw-react-core/types';
 ```
 
 #### Full Imports (Convenience)
@@ -266,8 +266,8 @@ import {
   ApiService,
   useLocalStorage,
   formatDate,
-} from '@intelehealth/ih-hw-core';
-import type { ApiResponse } from '@intelehealth/ih-hw-core';
+} from '@intelehealth/intelehealth-fhw-react-core';
+import type { ApiResponse } from '@intelehealth/intelehealth-fhw-react-core';
 ```
 
 #### Bundle Size Comparison

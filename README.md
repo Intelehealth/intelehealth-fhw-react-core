@@ -1,4 +1,4 @@
-# @intelehealth/ih-hw-core
+# @intelehealth/intelehealth-fhw-react-core
 
 Intelehealth's core library for React.js and React Native applications. A comprehensive universal library that provides essential utilities and services for healthcare applications, focusing on business logic without platform-specific dependencies.
 
@@ -28,7 +28,7 @@ Intelehealth's core library for React.js and React Native applications. A compre
 ## 📦 Installation
 
 ```bash
-yarn add @intelehealth/ih-hw-core
+yarn add @intelehealth/intelehealth-fhw-react-core
 ```
 
 ## 🔧 Local Development
@@ -39,15 +39,15 @@ For local development and testing with your React or React Native applications:
 
 ```bash
 # 1. Link the library globally (automated)
-cd ih-hw-core
+cd intelehealth-fhw-react-core
 npm run link:dev
 
 # 2. Link in your React app
 cd your-react-app
-npm link @intelehealth/ih-hw-core
+npm link @intelehealth/intelehealth-fhw-react-core
 
 # 3. Start development
-cd ih-hw-core && npm run dev  # Watch mode
+cd intelehealth-fhw-react-core && npm run dev  # Watch mode
 cd your-react-app && npm start  # Your app
 ```
 
@@ -55,15 +55,15 @@ cd your-react-app && npm start  # Your app
 
 ```bash
 # 1. Link the library globally
-cd ih-hw-core
+cd intelehealth-fhw-react-core
 npm link
 
 # 2. Link in your React app
 cd your-react-app
-npm link @intelehealth/ih-hw-core
+npm link @intelehealth/intelehealth-fhw-react-core
 
 # 3. Start development
-cd ih-hw-core && npm run dev  # Watch mode
+cd intelehealth-fhw-react-core && npm run dev  # Watch mode
 cd your-react-app && npm start  # Your app
 ```
 
@@ -73,7 +73,7 @@ cd your-react-app && npm start  # Your app
 // In your app's package.json
 {
   "dependencies": {
-    "@intelehealth/ih-hw-core": "file:../path/to/ih-hw-core"
+    "@intelehealth/intelehealth-fhw-react-core": "file:../path/to/intelehealth-fhw-react-core"
   }
 }
 ```
@@ -91,7 +91,7 @@ import {
   AuthService,
   useLocalStorage,
   useDebounce,
-} from '@intelehealth/ih-hw-core';
+} from '@intelehealth/intelehealth-fhw-react-core';
 
 // useLocalStorage works in React web apps
 const [value, setValue] = useLocalStorage('key', 'default');
@@ -105,7 +105,7 @@ import {
   ApiService,
   AuthService,
   useDebounce,
-} from '@intelehealth/ih-hw-core';
+} from '@intelehealth/intelehealth-fhw-react-core';
 
 // useLocalStorage is not available in React Native
 // Use the Storage class instead for persistent storage
@@ -117,7 +117,11 @@ const value = await storage.get('key');
 ### Full Import
 
 ```typescript
-import { Storage, ApiService, AuthService } from '@intelehealth/ih-hw-core';
+import {
+  Storage,
+  ApiService,
+  AuthService,
+} from '@intelehealth/intelehealth-fhw-react-core';
 
 // Use the Storage utility
 const storage = new Storage('app_');
@@ -136,17 +140,29 @@ await auth.login({ email: 'user@example.com', password: 'password' });
 
 ```typescript
 // Import only what you need from specific folders
-import { Storage, appStorage } from '@intelehealth/ih-hw-core/core';
-import { ApiService } from '@intelehealth/ih-hw-core/services';
-import { useLocalStorage, useDebounce } from '@intelehealth/ih-hw-core/hooks';
-import { formatDate, deepClone } from '@intelehealth/ih-hw-core/utils';
-import type { ApiResponse, User } from '@intelehealth/ih-hw-core/types';
+import {
+  Storage,
+  appStorage,
+} from '@intelehealth/intelehealth-fhw-react-core/core';
+import { ApiService } from '@intelehealth/intelehealth-fhw-react-core/services';
+import {
+  useLocalStorage,
+  useDebounce,
+} from '@intelehealth/intelehealth-fhw-react-core/hooks';
+import {
+  formatDate,
+  deepClone,
+} from '@intelehealth/intelehealth-fhw-react-core/utils';
+import type {
+  ApiResponse,
+  User,
+} from '@intelehealth/intelehealth-fhw-react-core/types';
 ```
 
 ## 📁 Project Structure
 
 ```
-ih-hw-core/
+intelehealth-fhw-react-core/
 ├── src/                    # Source code
 │   ├── core/              # Core utilities (Storage)
 │   ├── services/          # Services (ApiService, AuthService)
@@ -171,7 +187,7 @@ ih-hw-core/
 
    ```bash
    git clone <your-repo>
-   cd ih-hw-core
+   cd intelehealth-fhw-react-core
    yarn install
    yarn prepare         # Initialize Husky git hooks
    ```
@@ -267,7 +283,7 @@ Imports are automatically organized by ESLint in this order:
 This boilerplate creates a package that can be installed via:
 
 ```bash
-yarn add @intelehealth/ih-hw-core
+yarn add @intelehealth/intelehealth-fhw-react-core
 ```
 
 ## 🤝 Contributing

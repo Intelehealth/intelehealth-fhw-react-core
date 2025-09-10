@@ -1,6 +1,6 @@
 # Coding Standards & Best Practices
 
-This document outlines the coding standards and best practices for the ih-hw-core project.
+This document outlines the coding standards and best practices for the intelehealth-fhw-react-core project.
 
 ## 📋 Table of Contents
 
@@ -260,11 +260,11 @@ export default ApiService;
 
 ```typescript
 // ✅ Good - Import only what you need
-import { Storage } from '@intelehealth/ih-hw-core/core';
-import { ApiService } from '@intelehealth/ih-hw-core/services';
-import { useLocalStorage } from '@intelehealth/ih-hw-core/hooks';
-import { formatDate } from '@intelehealth/ih-hw-core/utils';
-import type { ApiResponse } from '@intelehealth/ih-hw-core/types';
+import { Storage } from '@intelehealth/intelehealth-fhw-react-core/core';
+import { ApiService } from '@intelehealth/intelehealth-fhw-react-core/services';
+import { useLocalStorage } from '@intelehealth/intelehealth-fhw-react-core/hooks';
+import { formatDate } from '@intelehealth/intelehealth-fhw-react-core/utils';
+import type { ApiResponse } from '@intelehealth/intelehealth-fhw-react-core/types';
 ```
 
 #### Full Imports (Convenience)
@@ -276,8 +276,8 @@ import {
   ApiService,
   useLocalStorage,
   formatDate,
-} from '@intelehealth/ih-hw-core';
-import type { ApiResponse } from '@intelehealth/ih-hw-core';
+} from '@intelehealth/intelehealth-fhw-react-core';
+import type { ApiResponse } from '@intelehealth/intelehealth-fhw-react-core';
 ```
 
 ## 🎯 Code Quality Rules

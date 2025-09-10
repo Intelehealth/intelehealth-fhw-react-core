@@ -1,17 +1,17 @@
 @echo off
-REM Development linking script for ih-hw-core (Windows)
+REM Development linking script for intelehealth-fhw-react-core (Windows)
 REM This script helps set up local development with React/React Native apps
 
-echo 🔗 Setting up ih-hw-core for local development...
+echo 🔗 Setting up intelehealth-fhw-react-core for local development...
 
 REM Check if we're in the right directory
 if not exist "package.json" (
-    echo ❌ Error: Please run this script from the ih-hw-core root directory
+    echo ❌ Error: Please run this script from the intelehealth-fhw-react-core root directory
     exit /b 1
 )
 
 if not exist "src" (
-    echo ❌ Error: Please run this script from the ih-hw-core root directory
+    echo ❌ Error: Please run this script from the intelehealth-fhw-react-core root directory
     exit /b 1
 )
 
@@ -33,13 +33,13 @@ if %errorlevel% equ 0 (
     echo.
     echo 📋 Next steps:
     echo 1. Go to your React/React Native app directory
-    echo 2. Run: npm link @intelehealth/ih-hw-core
+    echo 2. Run: npm link @intelehealth/intelehealth-fhw-react-core
     echo 3. Start development:
-    echo    - Library: npm run dev (in ih-hw-core directory)
+    echo    - Library: npm run dev (in intelehealth-fhw-react-core directory)
     echo    - Your app: npm start (in your app directory)
     echo.
     echo 🔄 To unlink later:
-    echo    - From your app: npm unlink @intelehealth/ih-hw-core
+    echo    - From your app: npm unlink @intelehealth/intelehealth-fhw-react-core
     echo    - From library: npm unlink
 ) else (
     echo ❌ Failed to create global link

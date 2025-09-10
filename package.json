@@ -1,7 +1,7 @@
 {
-  "name": "@intelehealth/ih-hw-core",
+  "name": "@intelehealth/intelehealth-fhw-react-core",
   "version": "1.0.0",
-  "description": "Intelehealth core library for React.js and React Native applications",
+  "description": "Intelehealth FHW React Core",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -83,12 +83,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/intelehealth/ih-hw-core.git"
+    "url": "https://github.com/intelehealth/intelehealth-fhw-react-core.git"
   },
   "bugs": {
-    "url": "https://github.com/intelehealth/ih-hw-core/issues"
+    "url": "https://github.com/intelehealth/intelehealth-fhw-react-core/issues"
   },
-  "homepage": "https://github.com/intelehealth/ih-hw-core#readme",
+  "homepage": "https://github.com/intelehealth/intelehealth-fhw-react-core#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
