@@ -61,13 +61,15 @@
     "prepare": "husky install",
     "pre-commit": "lint-staged && yarn format && yarn type-check && yarn lint:check && yarn test",
     "pre-push": "yarn type-check && yarn lint:check && yarn test && yarn build",
-    "prepublishOnly": "yarn clean && yarn build",
+    "prepublishOnly": "yarn clean && yarn readme:npm && yarn build",
     "publish": "npm publish",
     "prebuild": "yarn clean",
     "postbuild": "echo 'Build completed'",
     "link:dev": "node scripts/link-dev.js",
     "link:dev:win": "scripts\\link-dev.bat",
-    "link:dev:unix": "chmod +x scripts/link-dev.sh && scripts/link-dev.sh"
+    "link:dev:unix": "chmod +x scripts/link-dev.sh && scripts/link-dev.sh",
+    "readme:github": "node scripts/switch-readme.js github",
+    "readme:npm": "node scripts/switch-readme.js npm"
   },
   "keywords": [
     "react",

@@ -1,0 +1,60 @@
+# Development files and folders
+.vscode/
+.idea/
+*.log
+*.tmp
+*.temp
+
+# Source files (only dist should be published)
+src/
+examples/
+tests/
+docs/
+scripts/
+
+# Configuration files
+.eslintrc*
+.prettierrc*
+jest.config.js
+rollup.config.js
+tsconfig.json
+eslint.config.js
+
+# Git and CI/CD
+.git/
+.github/
+.husky/
+.gitignore
+.gitattributes
+
+# Dependencies
+node_modules/
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Build artifacts
+coverage/
+.nyc_output/
+*.tsbuildinfo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
